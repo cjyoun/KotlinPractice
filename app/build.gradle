@@ -16,6 +16,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // 뷰 바인더를 설정 - xml에 있는 요소들의 id 값을 Activity에서 findViewById 없이 사용 가능하게 함
+    buildFeatures{
+        viewBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
