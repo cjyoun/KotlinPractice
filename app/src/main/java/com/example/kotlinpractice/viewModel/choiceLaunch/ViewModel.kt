@@ -4,14 +4,13 @@ import android.util.Log
 import androidx.databinding.BaseObservable
 import com.example.kotlinpractice.model.choiceLaunch.Database
 import com.example.kotlinpractice.model.choiceLaunch.Database.DatabaseListener
-import com.example.kotlinpractice.model.choiceLaunch.Person
 
 class ViewModel : BaseObservable {
 
-    private lateinit var database: Database
-    private lateinit var items: List<Person>
+    private var database: Database
     private lateinit var selector: String
 
+    // 생성자
     constructor(database: Database){
         this.database = database
 

@@ -3,7 +3,7 @@ package com.example.kotlinpractice.model.choiceLaunch
 import android.util.Log
 
 class Database {
-    private lateinit var instance:Database
+
     private var personList = ArrayList<Person>()
     private lateinit var selector:String
     private lateinit var databaseListener: DatabaseListener
@@ -17,17 +17,9 @@ class Database {
         personList.add( Person(4,"최원혁") )
     }
 
-//    fun getInstance(): Database{
-//        Log.d("getInstance() - " , "Model에 접근 할 수 있도록 DB 인스턴스 값 요청")
-//        if(instance == null){
-//            instance = Database()
-//        }
-//        return instance
-//    }
-
     fun getUser() {
         Log.d("getUser() = " , "당첨자 획득")
-        selector = personList.get( ((Math.random()*5).toInt()) ).getName()
+        selector = personList.get( ((Math.random()*5).toInt()) ).getName()  // 랜덤으로 데이터베이스에 적힌 값 가져오기
 
         notifyChange()
 

@@ -14,7 +14,7 @@ class ChoiceLaunchActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivityChoiceLaunchBinding
 
-    lateinit var viewModel: ViewModel
+    private lateinit var viewModel: ViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,19 +24,19 @@ class ChoiceLaunchActivity : AppCompatActivity() {
 
 
         // binding 변수를 사용하여 xml 내부의 id 값을 호출
-        // 점심 고르기 페이지로 이동
+        // 홈 페이지로 이동
         binding.goHome.setOnClickListener{
             val goHome = Intent(this, MainActivity::class.java);
             startActivity(goHome)
         }
 
-        viewModel = ViewModel(Database())
+        viewModel = ViewModel(Database())   // Database의 데이터들을 담은 ViewMoel 객체 생성
 
-
+        // 메뉴 고르는 사람 버튼 클릭
         binding.personRandomBtn.setOnClickListener{
             Log.d("onClick = " , "랜덤으로 인원 선택")
-            viewModel.getUser()
-            binding.personName.text = viewModel.getSelector()
+            viewModel.getUser() // ViewModel에서 랜덤으로 User를 선택하여 selector 값 넣기
+            binding.personName.text = viewModel.getSelector()   // 선택된 유저 텍스트로 보여주기
         }
 
     }
