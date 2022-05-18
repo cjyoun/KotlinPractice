@@ -10,16 +10,16 @@ class Database {
 
     constructor() {
         Log.d("Database - " ,"Model인 Database 생성")
-        personList.add( Person(0,"김다유") )
-        personList.add( Person(1,"김보성") )
-        personList.add( Person(2,"채재윤") )
-        personList.add( Person(3,"최소연") )
-        personList.add( Person(4,"최원혁") )
+//        personList.add( Person(0,"김다유") )
+//        personList.add( Person(1,"김보성") )
+//        personList.add( Person(2,"채재윤") )
+//        personList.add( Person(3,"최소연") )
+//        personList.add( Person(4,"최원혁") )
     }
 
     fun getUser() {
         Log.d("getUser() = " , "당첨자 획득")
-        selector = personList.get( ((Math.random()*5).toInt()) ).getName()  // 랜덤으로 데이터베이스에 적힌 값 가져오기
+        selector = personList.get( ((Math.random()*personList.size).toInt()) ).getName()  // 랜덤으로 데이터베이스에 적힌 값 가져오기
 
         notifyChange()
 
@@ -38,6 +38,14 @@ class Database {
 
     fun getSelector(): String{
         return selector
+    }
+
+    fun setPersonList(i:Long , name: String){
+        personList.add(Person(i,name))
+    }
+
+    fun getPersonList(): ArrayList<Person> {
+        return personList
     }
 
     interface DatabaseListener {

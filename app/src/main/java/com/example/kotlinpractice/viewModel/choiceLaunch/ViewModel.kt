@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.databinding.BaseObservable
 import com.example.kotlinpractice.model.choiceLaunch.Database
 import com.example.kotlinpractice.model.choiceLaunch.Database.DatabaseListener
+import com.example.kotlinpractice.model.choiceLaunch.Person
 
 class ViewModel : BaseObservable {
 
@@ -32,6 +33,14 @@ class ViewModel : BaseObservable {
     fun getSelector(): String{
         Log.d("VM getSelector - " , "selector 반환 $selector")
         return selector
+    }
+
+    fun setPersonList(i:Long , name: String){
+        database.setPersonList(i,name)
+    }
+
+    fun getPersonList(): ArrayList<Person> {
+        return database.getPersonList()
     }
 
 }

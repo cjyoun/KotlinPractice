@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:id="@+id/choiceView"
     tools:context=".view.choiceLaunch.ChoiceLaunchActivity">
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:text="오늘의 점심 당번"
         android:textAlignment="center"
         android:textSize="35dp"
@@ -58,5 +61,51 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/inputPerson"
+        android:layout_width="252dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="100dp"
+        android:hint="사람추가"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:background="@drawable/border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personRandomBtn" />
+
+
+    <ImageButton
+        android:id="@+id/plusPerson"
+        android:layout_width="60dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="388dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toEndOf="@+id/inputPerson"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/inputPersonText"
+        android:layout_width="332dp"
+        android:layout_height="225dp"
+        android:layout_marginTop="36dp"
+        android:lineSpacingExtra="7dp"
+        android:padding="15dp"
+        android:scrollbars="vertical"
+        android:textAlignment="textStart"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPerson"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
