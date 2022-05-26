@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/ic_homexml.xml" value="0.3671875" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3671875" />
         <entry key="app/src/main/res/layout/activity_choice_launch.xml" value="0.2726449275362319" />
+        <entry key="app/src/main/res/layout/activity_choice_launch_favorit.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2726449275362319" />
       </map>
     </option>

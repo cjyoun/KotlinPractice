@@ -2,9 +2,9 @@ package com.example.kotlinpractice.model.choiceLaunch
 
 import android.util.Log
 
-class Database {
+class PersonDatabase {
 
-    private var personList = ArrayList<Person>()
+    private var readyPersonList = ArrayList<Person>()
     private lateinit var selector:String
     private lateinit var databaseListener: DatabaseListener
 
@@ -19,7 +19,7 @@ class Database {
 
     fun getUser() {
         Log.d("getUser() = " , "당첨자 획득")
-        selector = personList.get( ((Math.random()*personList.size).toInt()) ).getName()  // 랜덤으로 데이터베이스에 적힌 값 가져오기
+        selector = readyPersonList.get( ((Math.random()*readyPersonList.size).toInt()) ).getName()  // 랜덤으로 데이터베이스에 적힌 값 가져오기
 
         notifyChange()
 
@@ -40,12 +40,16 @@ class Database {
         return selector
     }
 
-    fun setPersonList(i:Long , name: String){
-        personList.add(Person(i,name))
+    fun setReadyPersonList(i:Long , name: String){
+        readyPersonList.add(Person(i,name))
     }
 
-    fun getPersonList(): ArrayList<Person> {
-        return personList
+    fun getReadyPersonList(): ArrayList<Person> {
+        return readyPersonList
+    }
+
+    fun removeReadyPersonList(){
+        readyPersonList.clear()
     }
 
     interface DatabaseListener {

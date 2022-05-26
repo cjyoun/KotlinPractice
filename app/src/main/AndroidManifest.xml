@@ -11,6 +11,7 @@
         android:theme="@style/Theme.KotlinPractice">
         <activity
             android:name=".view.choiceLaunch.ChoiceLaunchActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

@@ -22,25 +22,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/personName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="누구?"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
-
     <Button
         android:id="@+id/personRandomBtn"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="123dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="44dp"
         android:text="돌리기"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -48,6 +34,21 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/personName" />
+
+    <TextView
+        android:id="@+id/personName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="누구?"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
 
     <ImageButton
         android:id="@+id/goHome"
@@ -63,49 +64,72 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <EditText
-        android:id="@+id/inputPerson"
-        android:layout_width="252dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mRecyclerView"
+        android:layout_width="337dp"
         android:layout_height="46dp"
-        android:layout_marginTop="100dp"
-        android:hint="사람추가"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:background="@drawable/border"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/inputPersonText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/personRandomBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/personRandomBtn"
+        app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/inputPersonText"
+        android:layout_width="337dp"
+        android:layout_height="109dp"
+        android:background="@drawable/border"
+        android:lineSpacingExtra="7dp"
+        android:padding="15dp"
+        android:scrollbars="vertical"
+        android:textAlignment="textStart"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personRandomBtn"
+        app:layout_constraintVertical_bias="0.298" />
 
     <ImageButton
         android:id="@+id/plusPerson"
         android:layout_width="60dp"
         android:layout_height="64dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="40dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_plus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toEndOf="@+id/inputPerson"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/inputPersonText" />
 
-    <TextView
-        android:id="@+id/inputPersonText"
-        android:layout_width="332dp"
-        android:layout_height="225dp"
-        android:layout_marginTop="36dp"
-        android:lineSpacingExtra="7dp"
-        android:padding="15dp"
-        android:scrollbars="vertical"
-        android:textAlignment="textStart"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/inputPerson"
+        android:layout_width="252dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/border"
+        android:hint="사람추가"
+        android:textAlignment="center"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintHorizontal_bias="0.226"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPerson"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/inputPersonText" />
+
+    <Button
+        android:id="@+id/addFavoritesBtn"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:text="즐겨찾기 추가"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPerson" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

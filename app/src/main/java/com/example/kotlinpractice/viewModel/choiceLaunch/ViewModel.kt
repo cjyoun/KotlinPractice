@@ -2,23 +2,23 @@ package com.example.kotlinpractice.viewModel.choiceLaunch
 
 import android.util.Log
 import androidx.databinding.BaseObservable
-import com.example.kotlinpractice.model.choiceLaunch.Database
-import com.example.kotlinpractice.model.choiceLaunch.Database.DatabaseListener
+import com.example.kotlinpractice.model.choiceLaunch.PersonDatabase
+import com.example.kotlinpractice.model.choiceLaunch.PersonDatabase.DatabaseListener
 import com.example.kotlinpractice.model.choiceLaunch.Person
 
 class ViewModel : BaseObservable {
 
-    private var database: Database
+    private var personDatabase: PersonDatabase
     private lateinit var selector: String
 
     // 생성자
-    constructor(database: Database){
-        this.database = database
+    constructor(personDatabase: PersonDatabase){
+        this.personDatabase = personDatabase
 
-        this.database.setOnDatabaseListener(object : DatabaseListener {
+        this.personDatabase.setOnDatabaseListener(object : DatabaseListener {
             override fun onChanged() {
                 selector = ""
-                selector = database.getSelector()
+                selector = personDatabase.getSelector()
                 notifyChange()
             }
         })
@@ -27,7 +27,7 @@ class ViewModel : BaseObservable {
 
     fun getUser(){
         Log.d("ViewModel getUser - " , "DB에게 user(selector)를 달라고 요청")
-        database.getUser()
+        personDatabase.getUser()
     }
 
     fun getSelector(): String{
@@ -35,12 +35,16 @@ class ViewModel : BaseObservable {
         return selector
     }
 
-    fun setPersonList(i:Long , name: String){
-        database.setPersonList(i,name)
+    fun setReadyPersonList(i:Long , name: String) {
+        personDatabase.setReadyPersonList(i, name)
     }
 
-    fun getPersonList(): ArrayList<Person> {
-        return database.getPersonList()
+    fun getReadyPersonList(): ArrayList<Person> {
+        return personDatabase.getReadyPersonList()
+    }
+
+    fun removeReadyPersonList(){
+        personDatabase.removeReadyPersonList()
     }
 
 }
