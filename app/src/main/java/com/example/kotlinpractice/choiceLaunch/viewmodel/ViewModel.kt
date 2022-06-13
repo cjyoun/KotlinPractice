@@ -1,10 +1,10 @@
-package com.example.kotlinpractice.viewModel.choiceLaunch
+package com.example.kotlinpractice.choiceLaunch.viewmodel
 
 import android.util.Log
 import androidx.databinding.BaseObservable
-import com.example.kotlinpractice.model.choiceLaunch.PersonDatabase
-import com.example.kotlinpractice.model.choiceLaunch.PersonDatabase.DatabaseListener
-import com.example.kotlinpractice.model.choiceLaunch.Person
+import com.example.kotlinpractice.choiceLaunch.model.PersonDatabase
+import com.example.kotlinpractice.choiceLaunch.model.PersonDatabase.DatabaseListener
+import com.example.kotlinpractice.choiceLaunch.model.Person
 
 class ViewModel : BaseObservable {
 

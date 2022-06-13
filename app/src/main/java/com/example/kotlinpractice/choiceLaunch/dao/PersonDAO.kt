@@ -1,10 +1,10 @@
-package com.example.kotlinpractice.DAO.choiceLaunch
+package com.example.kotlinpractice.choiceLaunch.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.kotlinpractice.entity.choiceLaunch.PersonEntity
+import com.example.kotlinpractice.choiceLaunch.entity.PersonEntity
 
 // interface 위에 어노테이션 Dao 선언
 @Dao

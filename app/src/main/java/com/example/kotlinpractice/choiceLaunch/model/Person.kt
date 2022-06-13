@@ -1,4 +1,4 @@
-package com.example.kotlinpractice.model.choiceLaunch
+package com.example.kotlinpractice.choiceLaunch.model
 
 import kotlin.properties.Delegates
 

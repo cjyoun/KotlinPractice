@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.kotlinpractice.databinding.ActivityMainBinding
-import com.example.kotlinpractice.view.choiceLaunch.ChoiceLaunchActivity
+import com.example.kotlinpractice.choiceLaunch.view.ChoiceLaunchActivity
 
 
 class MainActivity : AppCompatActivity() {

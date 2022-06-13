@@ -1,4 +1,4 @@
-package com.example.kotlinpractice.view.choiceLaunch
+package com.example.kotlinpractice.choiceLaunch.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,21 +6,18 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.text.method.ScrollingMovementMethod
 import android.util.Log
-import android.util.TypedValue
 import android.view.inputmethod.InputMethodManager
 import com.example.kotlinpractice.MainActivity
 import com.example.kotlinpractice.databinding.ActivityChoiceLaunchBinding
-import com.example.kotlinpractice.model.choiceLaunch.PersonDatabase
-import com.example.kotlinpractice.viewModel.choiceLaunch.ViewModel
+import com.example.kotlinpractice.choiceLaunch.model.PersonDatabase
+import com.example.kotlinpractice.choiceLaunch.viewmodel.ViewModel
 import android.widget.EditText
 
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
-import com.example.kotlinpractice.appDB.choiceLaunch.ChoiceLaunchAppDatabase
-import com.example.kotlinpractice.entity.choiceLaunch.PersonEntity
-import com.example.kotlinpractice.util.PreferenceManager
+import com.example.kotlinpractice.choiceLaunch.appdb.ChoiceLaunchAppDatabase
+import com.example.kotlinpractice.choiceLaunch.entity.PersonEntity
 
 
 class ChoiceLaunchActivity : AppCompatActivity() {
@@ -130,7 +127,7 @@ class ChoiceLaunchActivity : AppCompatActivity() {
 
         // 기존 즐겨찾기 버튼 생성 및 선택 시 이벤트
         val adapter = PersonListAdapter(personList)
-        adapter.setItemClickListener(object: PersonListAdapter.OnItemClickListener{
+        adapter.setItemClickListener(object: PersonListAdapter.OnItemClickListener {
             override fun onClick(v: View, position: Int) {
 
                 // PersonDatabase에 있는 readyPersonList에 값이 있을 경우 clear 시켜주기

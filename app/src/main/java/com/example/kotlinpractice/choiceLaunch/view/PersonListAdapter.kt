@@ -1,11 +1,11 @@
-package com.example.kotlinpractice.view.choiceLaunch
+package com.example.kotlinpractice.choiceLaunch.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinpractice.R
-import com.example.kotlinpractice.entity.choiceLaunch.PersonEntity
+import com.example.kotlinpractice.choiceLaunch.entity.PersonEntity
 
 class PersonListAdapter (private val itemList : List<PersonEntity>) : RecyclerView.Adapter<PersonListViewHolder>()  {
 
