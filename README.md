@@ -5,6 +5,7 @@
 - 변수선언 : camel case
 - id값 선언 : camel case
 - 함수명 선언 : camel case
+- 패키지명 : 소문자
 
 ####
 # 1. 점심 당번 고르기
