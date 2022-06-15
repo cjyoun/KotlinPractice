@@ -3,7 +3,8 @@
 - MVVM 패턴 사용
 - 화면 별로 패키지 생성 후 그 안에서 model, view, viewModel 별로 패키지 나눠서 생성
 - 변수선언 : camel case
-- id값 선언 : snake case
+- id값 선언 : camel case
+- 함수명 선언 : camel case
 
 ####
 # 1. 점심 당번 고르기
