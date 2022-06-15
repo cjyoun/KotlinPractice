@@ -1,4 +1,4 @@
-package com.example.kotlinpractice.choiceLaunch.entity
+package com.example.kotlinpractice.choicelunch.entity
 
 import androidx.room.*
 

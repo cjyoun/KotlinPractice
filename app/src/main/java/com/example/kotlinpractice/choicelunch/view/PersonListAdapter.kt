@@ -1,11 +1,11 @@
-package com.example.kotlinpractice.choiceLaunch.view
+package com.example.kotlinpractice.choicelunch.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinpractice.R
-import com.example.kotlinpractice.choiceLaunch.entity.PersonEntity
+import com.example.kotlinpractice.choicelunch.entity.PersonEntity
 
 class PersonListAdapter (private val itemList : List<PersonEntity>) : RecyclerView.Adapter<PersonListViewHolder>()  {
 
@@ -15,7 +15,7 @@ class PersonListAdapter (private val itemList : List<PersonEntity>) : RecyclerVi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonListViewHolder {
         // layout을 리사이클러뷰에 보여줄 아이템에 대한 xml 파일 명 입력.
-        val inflatedView = LayoutInflater.from(parent.context).inflate(R.layout.activity_choice_launch_favorit, parent, false)
+        val inflatedView = LayoutInflater.from(parent.context).inflate(R.layout.activity_choice_lunch_favorit, parent, false)
         return PersonListViewHolder(inflatedView)
     }
 

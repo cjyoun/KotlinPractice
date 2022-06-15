@@ -1,4 +1,4 @@
-package com.example.kotlinpractice.choiceLaunch.model
+package com.example.kotlinpractice.choicelunch.model
 
 import android.util.Log
 

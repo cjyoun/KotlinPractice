@@ -1,9 +1,9 @@
-package com.example.kotlinpractice.choiceLaunch.view
+package com.example.kotlinpractice.choicelunch.view
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinpractice.R
-import com.example.kotlinpractice.choiceLaunch.entity.PersonEntity
+import com.example.kotlinpractice.choicelunch.entity.PersonEntity
 
 class PersonListViewHolder(v: View) : RecyclerView.ViewHolder(v){
     var view : View = v

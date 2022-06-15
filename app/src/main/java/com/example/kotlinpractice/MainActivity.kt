@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.kotlinpractice.databinding.ActivityMainBinding
-import com.example.kotlinpractice.choiceLaunch.view.ChoiceLaunchActivity
+import com.example.kotlinpractice.choicelunch.view.ChoiceLunchActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,10 +21,12 @@ class MainActivity : AppCompatActivity() {
 
         // binding 변수를 사용하여 xml 내부의 id 값을 호출
         // 점심 고르기 페이지로 이동
-        binding.GoChoiceLaunch.setOnClickListener{
-            val goChoiceLaunchActivity = Intent(this, ChoiceLaunchActivity::class.java);
-            startActivity(goChoiceLaunchActivity)
+        binding.goChoiceLunch.setOnClickListener{
+            val goChoiceLunchActivity = Intent(this, ChoiceLunchActivity::class.java);
+            startActivity(goChoiceLunchActivity)
         }
+
+
 
 
     }

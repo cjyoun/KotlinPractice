@@ -7,7 +7,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:id="@+id/choiceView"
-    tools:context=".choiceLaunch.view.ChoiceLaunchActivity">
+    tools:context=".choicelunch.view.ChoiceLunchActivity">
 
     <TextView
         android:id="@+id/text1"

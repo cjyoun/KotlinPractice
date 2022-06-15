@@ -1,6 +1,4 @@
-package com.example.kotlinpractice.choiceLaunch.model
-
-import kotlin.properties.Delegates
+package com.example.kotlinpractice.choicelunch.model
 
 class Person {
     private var id:Long = 0

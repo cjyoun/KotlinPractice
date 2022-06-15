@@ -1,4 +1,4 @@
-package com.example.kotlinpractice.choiceLaunch.view
+package com.example.kotlinpractice.choicelunch.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,21 +8,21 @@ import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import com.example.kotlinpractice.MainActivity
-import com.example.kotlinpractice.databinding.ActivityChoiceLaunchBinding
-import com.example.kotlinpractice.choiceLaunch.model.PersonDatabase
-import com.example.kotlinpractice.choiceLaunch.viewmodel.ViewModel
+import com.example.kotlinpractice.databinding.ActivityChoiceLunchBinding
+import com.example.kotlinpractice.choicelunch.model.PersonDatabase
+import com.example.kotlinpractice.choicelunch.viewmodel.ViewModel
 import android.widget.EditText
 
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
-import com.example.kotlinpractice.choiceLaunch.appdb.ChoiceLaunchAppDatabase
-import com.example.kotlinpractice.choiceLaunch.entity.PersonEntity
+import com.example.kotlinpractice.choicelunch.appdb.ChoiceLunchAppDatabase
+import com.example.kotlinpractice.choicelunch.entity.PersonEntity
 
 
-class ChoiceLaunchActivity : AppCompatActivity() {
+class ChoiceLunchActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityChoiceLaunchBinding
+    private lateinit var binding:ActivityChoiceLunchBinding
 
     private lateinit var viewModel: ViewModel
 
@@ -30,7 +30,7 @@ class ChoiceLaunchActivity : AppCompatActivity() {
 
     private var number:Long = 0;
 
-    var db: ChoiceLaunchAppDatabase? = null
+    var db: ChoiceLunchAppDatabase? = null
     var personList = mutableListOf<PersonEntity>()
 
 
@@ -59,7 +59,7 @@ class ChoiceLaunchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityChoiceLaunchBinding.inflate(layoutInflater)   // 자동생성된 뷰바인딩 클래스에서의 inflate라는 메서드를 활용해서 액티비티에서 사용할 바인딩클래스의 인스턴스 생성
+        binding = ActivityChoiceLunchBinding.inflate(layoutInflater)   // 자동생성된 뷰바인딩 클래스에서의 inflate라는 메서드를 활용해서 액티비티에서 사용할 바인딩클래스의 인스턴스 생성
         setContentView(binding.root)    // 레이아웃 내부의 최상위 위치뷰의 인스턴스를 활용하여 뷰를 액티비티에 표시
 
 
@@ -117,7 +117,7 @@ class ChoiceLaunchActivity : AppCompatActivity() {
 
 
 
-        db = ChoiceLaunchAppDatabase.getInstance(this)  // DB 초기화
+        db = ChoiceLunchAppDatabase.getInstance(this)  // DB 초기화
         val savePersonList = db!!.personDao().getAll()  // 이전에 DB에 있는 값 가져오기
         if(savePersonList.isNotEmpty()){
             personList.addAll(savePersonList)   // DB 값 세팅
@@ -147,7 +147,7 @@ class ChoiceLaunchActivity : AppCompatActivity() {
                     number++
                 }
 
-                Toast.makeText(this@ChoiceLaunchActivity,"저장인원 - $personListText",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ChoiceLunchActivity,"저장인원 - $personListText",Toast.LENGTH_SHORT).show()
 
             }
         })
@@ -158,7 +158,7 @@ class ChoiceLaunchActivity : AppCompatActivity() {
             val personEntity = PersonEntity(personList.size+1.toLong(),"favorit$num",personListText)    // 시퀀스를 이미 DB에 있는거 다음으로 지정
             db?.personDao()?.insertAll(personEntity)
             personList.add(personEntity)
-            Toast.makeText(this@ChoiceLaunchActivity,"저장인원 - $personListText",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@ChoiceLunchActivity,"저장인원 - $personListText",Toast.LENGTH_SHORT).show()
             adapter.notifyDataSetChanged() //리스트뷰 갱신
         }
 
