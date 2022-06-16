@@ -1,7 +1,6 @@
 package com.example.kotlinpractice.choicelunch.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.text.method.ScrollingMovementMethod
@@ -16,11 +15,12 @@ import android.widget.EditText
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
+import com.example.kotlinpractice.BaseActivity
 import com.example.kotlinpractice.choicelunch.appdb.ChoiceLunchAppDatabase
 import com.example.kotlinpractice.choicelunch.entity.PersonEntity
 
 
-class ChoiceLunchActivity : AppCompatActivity() {
+class ChoiceLunchActivity : BaseActivity() {
 
     private lateinit var binding:ActivityChoiceLunchBinding
 

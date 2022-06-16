@@ -1,13 +1,13 @@
 package com.example.kotlinpractice
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.kotlinpractice.calendar.view.CalendarActivity
 import com.example.kotlinpractice.databinding.ActivityMainBinding
 import com.example.kotlinpractice.choicelunch.view.ChoiceLunchActivity
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding:ActivityMainBinding    // 전역으로 바인딩 객체 생성 (Activity별 자동 생성된 Binding클래스 매칭)
 
@@ -26,7 +26,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(goChoiceLunchActivity)
         }
 
-
+        // 달력 보기 페이지로 이동
+        binding.goCalendar.setOnClickListener{
+            val goCalendarActivity = Intent(this, CalendarActivity::class.java);
+            startActivity(goCalendarActivity)
+        }
 
 
     }
