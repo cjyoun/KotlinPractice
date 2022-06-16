@@ -19,12 +19,12 @@ abstract class ChoiceLunchAppDatabase : RoomDatabase(){
 
         @Synchronized
         fun getInstance(context: Context): ChoiceLunchAppDatabase?{
-            // DB이름은 database-choiceLaunch allowMainThreadQueries로 UI Thread(mainThread)에서 접근 가능하게 설정
+            // DB이름은 database-choiceLunch allowMainThreadQueries로 UI Thread(mainThread)에서 접근 가능하게 설정
             if(instance ==null){
                 instance = Room.databaseBuilder(
                     context.applicationContext,
                     ChoiceLunchAppDatabase::class.java,
-                    "database-choiceLaunch"
+                    "database-choiceLunch"
                 )
                     .allowMainThreadQueries()
                     .build()
