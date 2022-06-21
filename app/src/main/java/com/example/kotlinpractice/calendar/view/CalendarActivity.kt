@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.view.MotionEvent
 import com.example.kotlinpractice.BaseActivity
 import com.example.kotlinpractice.databinding.ActivityCalendarBinding
+import java.util.*
 
 class CalendarActivity : BaseActivity() {
 
@@ -48,6 +49,23 @@ class CalendarActivity : BaseActivity() {
             val goHome = Intent(this, MainActivity::class.java);
             startActivity(goHome)
         }
+
+        // 달력 날짜 선택 시
+        binding.calendar.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            // 날짜를 보여주는 텍스트에 해당 날짜를 넣는다.
+            binding.dDay.text = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
+
+            val newCalendar = Calendar.getInstance()
+            newCalendar.set(year, month +1, dayOfMonth)
+
+
+            var day = dayOfMonth + 100;
+            binding.dayList.text = view.toString()
+        }
+
+
+
+
 
 
     }
