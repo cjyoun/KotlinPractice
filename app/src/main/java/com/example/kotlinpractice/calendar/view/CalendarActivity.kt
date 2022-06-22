@@ -2,6 +2,7 @@ package com.example.kotlinpractice.calendar.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import com.example.kotlinpractice.MainActivity
 import android.widget.EditText
@@ -9,6 +10,9 @@ import android.widget.EditText
 import android.view.MotionEvent
 import com.example.kotlinpractice.BaseActivity
 import com.example.kotlinpractice.databinding.ActivityCalendarBinding
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class CalendarActivity : BaseActivity() {
@@ -52,15 +56,25 @@ class CalendarActivity : BaseActivity() {
 
         // 달력 날짜 선택 시
         binding.calendar.setOnDateChangeListener { view, year, month, dayOfMonth ->
+
+            // 선택한 날짜 yyyy/MM/dd 형식으로 파싱
+            val format = SimpleDateFormat("yyyy/MM/dd")
+            val date = format.parse("$year/${month+1}/$dayOfMonth")
+            Log.d("time", date.toString())
+            // 선택한 날짜가 무슨 요일인지 구하기
+            val simpleDateFormat = SimpleDateFormat("EEEE") // 요일 나오게 하는 패턴
+            val dayName: String = simpleDateFormat.format(date) // 선택한 날의 요일
+
             // 날짜를 보여주는 텍스트에 해당 날짜를 넣는다.
-            binding.dDay.text = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
+            val selectDay = String.format("%d / %d / %d", year, month + 1, dayOfMonth) + " ($dayName)"
+            Log.d("time", selectDay)
+            binding.dDay.text = selectDay
 
-            val newCalendar = Calendar.getInstance()
-            newCalendar.set(year, month +1, dayOfMonth)
+            val today = Calendar.getInstance()
+            val ingDay = (today.time.time - date.time) / (60 * 60 * 24 * 1000)
 
 
-            var day = dayOfMonth + 100;
-            binding.dayList.text = view.toString()
+            binding.dayList.text = "$ingDay 일 째"
         }
 
 
