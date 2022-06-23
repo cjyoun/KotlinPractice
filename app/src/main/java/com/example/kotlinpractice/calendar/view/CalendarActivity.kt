@@ -2,6 +2,7 @@ package com.example.kotlinpractice.calendar.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import com.example.kotlinpractice.MainActivity
@@ -62,7 +63,7 @@ class CalendarActivity : BaseActivity() {
             val date = format.parse("$year/${month+1}/$dayOfMonth")
             Log.d("time1", date.toString())
             // 선택한 날짜가 무슨 요일인지 구하기
-            val simpleDateFormat = SimpleDateFormat("E요일", Locale.KOREAN) // 요일 나오게 하는 패턴
+            val simpleDateFormat = SimpleDateFormat("E요일", Locale.KOREAN) // 요일 나오게 하는 패턴 (한글로 변경)
             val dayName: String = simpleDateFormat.format(date) // 선택한 날의 요일일
 
             // 날짜를 보여주는 텍스트에 해당 날짜를 넣는다.
@@ -90,8 +91,11 @@ class CalendarActivity : BaseActivity() {
             val hundredAfterDayName: String = simpleDateFormat.format(date) // 선택한 날의 100일 후 요일
             Log.d("time5", "$hundredAfterDay / $hundredAfterDayName")
 
+            // 선택한 날짜 이후의 날들을 출력
             binding.dayList.text = "$ingDay 일 째  \n100일 - $hundredAfterDay ($hundredAfterDayName)"
         }
+
+        binding.dayList.movementMethod = ScrollingMovementMethod()  // textView scrollbar 가능하게 하기 xml에 해당 부분에 andriod:scrollbars="vertical" 추가
 
     }
 
