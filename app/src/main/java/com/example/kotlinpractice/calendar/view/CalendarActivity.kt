@@ -60,27 +60,38 @@ class CalendarActivity : BaseActivity() {
             // 선택한 날짜 yyyy/MM/dd 형식으로 파싱
             val format = SimpleDateFormat("yyyy/MM/dd")
             val date = format.parse("$year/${month+1}/$dayOfMonth")
-            Log.d("time", date.toString())
+            Log.d("time1", date.toString())
             // 선택한 날짜가 무슨 요일인지 구하기
-            val simpleDateFormat = SimpleDateFormat("EEEE") // 요일 나오게 하는 패턴
-            val dayName: String = simpleDateFormat.format(date) // 선택한 날의 요일
+            val simpleDateFormat = SimpleDateFormat("E요일", Locale.KOREAN) // 요일 나오게 하는 패턴
+            val dayName: String = simpleDateFormat.format(date) // 선택한 날의 요일일
 
             // 날짜를 보여주는 텍스트에 해당 날짜를 넣는다.
             val selectDay = String.format("%d / %d / %d", year, month + 1, dayOfMonth) + " ($dayName)"
-            Log.d("time", selectDay)
+            Log.d("time2", selectDay)
             binding.dDay.text = selectDay
 
-            val today = Calendar.getInstance()
-            val ingDay = (today.time.time - date.time) / (60 * 60 * 24 * 1000)
+            // 오늘 날짜 0시0분으로 맞추기
+            val today = Calendar.getInstance().apply {
+                set(Calendar.HOUR_OF_DAY,0)
+                set(Calendar.MINUTE,0)
+                set(Calendar.SECOND,0)
+                set(Calendar.MILLISECOND,0)
+            }
+            val oneDay:Long = 60 * 60 * 24 * 1000   // type을 명시해주어야만 계산이 가능함 타입추론으로 Int값이 Long값으로 변하게 되면 다른 값이 계산될 수 있음
+            val ingDay =((today.time.time - date.time) / oneDay ) + 1    // 오늘과 선택한 날의 차이를 통해 몇일이 지났는지 계산, 첫날부터 1일로 치기 때문에 +1
 
+            Log.d("time3", "${today.time.time} / ${date.time} / $oneDay / $ingDay")
 
-            binding.dayList.text = "$ingDay 일 째"
+            // 100일 째 되는 날을 구하기 (첫날을 1일로 시작하기 때문에 99일 후가 100일)
+            val addDay:Long = date.time + (99 * oneDay)
+            Log.d("time4", "${date.time} + ${99 * oneDay} = $addDay")
+            date.time = addDay
+            val hundredAfterDay: String = format.format(date) // 선택한 날의 100일 후
+            val hundredAfterDayName: String = simpleDateFormat.format(date) // 선택한 날의 100일 후 요일
+            Log.d("time5", "$hundredAfterDay / $hundredAfterDayName")
+
+            binding.dayList.text = "$ingDay 일 째  \n100일 - $hundredAfterDay ($hundredAfterDayName)"
         }
-
-
-
-
-
 
     }
 
