@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinPractice">
         <activity
-            android:name=".PictureActivity"
-            android:exported="false" />
+            android:name=".picture.view.PictureActivity"
+            android:exported="true" />
         <activity
             android:name=".choicelunch.view.ChoiceLunchActivity"
             android:exported="true"

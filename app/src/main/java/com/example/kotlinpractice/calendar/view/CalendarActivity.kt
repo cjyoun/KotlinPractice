@@ -84,15 +84,24 @@ class CalendarActivity : BaseActivity() {
             Log.d("time3", "${today.time.time} / ${date.time} / $oneDay / $ingDay")
 
             // 100일 째 되는 날을 구하기 (첫날을 1일로 시작하기 때문에 99일 후가 100일)
-            val addDay:Long = date.time + (99 * oneDay)
+            var addDay:Long = date.time + (99 * oneDay)
             Log.d("time4", "${date.time} + ${99 * oneDay} = $addDay")
-            date.time = addDay
-            val hundredAfterDay: String = format.format(date) // 선택한 날의 100일 후
-            val hundredAfterDayName: String = simpleDateFormat.format(date) // 선택한 날의 100일 후 요일
+            date.time = addDay  // 선택한 날의 time값을 100일 후의 날짜의 time값으로 변경
+            var hundredAfterDay: String = format.format(date) // 선택한 날의 100일 후
+            var hundredAfterDayName: String = simpleDateFormat.format(date) // 선택한 날의 100일 후 요일
             Log.d("time5", "$hundredAfterDay / $hundredAfterDayName")
 
+//            var str = ""
+//            for(i in 100 .. 10000 step 100){
+//                addDay = date.time + ((i-1) * oneDay)
+//                date.time = addDay
+//                hundredAfterDay = format.format(date) // 선택한 날의 100일 후
+//                hundredAfterDayName = simpleDateFormat.format(date) // 선택한 날의 100일 후 요일
+//                str = "$str$i 일 - $hundredAfterDay ($hundredAfterDayName)\n"
+//            }
+
             // 선택한 날짜 이후의 날들을 출력
-            binding.dayList.text = "$ingDay 일 째  \n100일 - $hundredAfterDay ($hundredAfterDayName)"
+            binding.dayList.text = "$ingDay 일 째  \n $str"
         }
 
         binding.dayList.movementMethod = ScrollingMovementMethod()  // textView scrollbar 가능하게 하기 xml에 해당 부분에 andriod:scrollbars="vertical" 추가
