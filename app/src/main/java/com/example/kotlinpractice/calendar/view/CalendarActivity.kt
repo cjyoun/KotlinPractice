@@ -12,8 +12,6 @@ import android.view.MotionEvent
 import com.example.kotlinpractice.BaseActivity
 import com.example.kotlinpractice.databinding.ActivityCalendarBinding
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class CalendarActivity : BaseActivity() {
