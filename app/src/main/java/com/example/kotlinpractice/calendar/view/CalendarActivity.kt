@@ -9,6 +9,7 @@ import com.example.kotlinpractice.MainActivity
 import android.widget.EditText
 
 import android.view.MotionEvent
+import android.widget.Toast
 import com.example.kotlinpractice.BaseActivity
 import com.example.kotlinpractice.databinding.ActivityCalendarBinding
 import java.text.SimpleDateFormat
@@ -97,6 +98,16 @@ class CalendarActivity : BaseActivity() {
         }
 
         binding.dayList.movementMethod = ScrollingMovementMethod()  // textView scrollbar 가능하게 하기 xml에 해당 부분에 andriod:scrollbars="vertical" 추가
+
+        // 등록 버튼 클릭 시
+        binding.setDayBtn.setOnClickListener {
+            if(binding.inputDay.text.length != 8){
+                Toast.makeText(this,"날짜를 제대로 입력해주세요.", Toast.LENGTH_SHORT).show()
+            } else{
+                val inputDay:String = binding.inputDay.text.toString()
+
+            }
+        }
 
     }
 
