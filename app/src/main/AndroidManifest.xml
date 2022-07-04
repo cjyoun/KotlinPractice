@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinPractice">
         <activity
+            android:name=".Chicken1Activity"
+            android:exported="false" />
+        <activity
             android:name=".picture.view.PictureActivity"
             android:exported="true" />
         <activity
@@ -18,8 +21,8 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".calendar.view.CalendarActivity"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

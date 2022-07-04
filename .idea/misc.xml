@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/chaejaeyoun/StudioProjects/KotlinPractice/app/src/main/res/layout/activity_chicken1.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/chaejaeyoun/StudioProjects/KotlinPractice/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/chaejaeyoun/StudioProjects/KotlinPractice/app/src/main/res/layout/activity_picture.xml" value="0.16799999999999998" />
         <entry key="app/src/main/res/drawable/border.xml" value="0.2109375" />
         <entry key="app/src/main/res/drawable/edge.xml" value="0.2109375" />
         <entry key="app/src/main/res/drawable/ic_homexml.xml" value="0.3671875" />
