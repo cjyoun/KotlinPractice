@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.kotlinpractice.calendar.view.CalendarActivity
 import com.example.kotlinpractice.databinding.ActivityMainBinding
 import com.example.kotlinpractice.choicelunch.view.ChoiceLunchActivity
+import com.example.kotlinpractice.navermap.view.NaverMapActivity
 
 
 class MainActivity : BaseActivity() {
@@ -30,6 +31,13 @@ class MainActivity : BaseActivity() {
         binding.goCalendar.setOnClickListener{
             val goCalendarActivity = Intent(this, CalendarActivity::class.java);
             startActivity(goCalendarActivity)
+        }
+
+
+        // 네이버 지도 보기 페이지로 이동
+        binding.goNaverMap.setOnClickListener{
+            val goNaverMapActivity = Intent(this, NaverMapActivity::class.java);
+            startActivity(goNaverMapActivity)
         }
 
 

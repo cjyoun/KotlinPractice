@@ -10,11 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinPractice">
         <activity
-            android:name=".Chicken1Activity"
+            android:name=".navermap.view.NaverMapActivity"
             android:exported="false" />
-        <activity
-            android:name=".picture.view.PictureActivity"
-            android:exported="true" />
         <activity
             android:name=".choicelunch.view.ChoiceLunchActivity"
             android:exported="true"
@@ -31,7 +28,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- 네이버 지도 -->
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="kvmxrl61z9" />
     </application>
 
 </manifest>
