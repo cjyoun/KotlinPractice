@@ -7,10 +7,14 @@ import com.example.kotlinpractice.MainActivity
 import com.example.kotlinpractice.databinding.ActivityMainBinding
 import com.example.kotlinpractice.databinding.ActivityNaverMapBinding
 import com.naver.maps.map.MapView
+import com.naver.maps.map.NaverMap
+import com.naver.maps.map.OnMapReadyCallback
 
-class NaverMapActivity : AppCompatActivity() {
+class NaverMapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mapView: MapView
+
+    private lateinit var naverMap: NaverMap     // 지도 기능 사용을 위한 콜백 등록
 
     private lateinit var binding: ActivityNaverMapBinding    // 전역으로 바인딩 객체 생성 (Activity별 자동 생성된 Binding클래스 매칭)
 
@@ -28,8 +32,17 @@ class NaverMapActivity : AppCompatActivity() {
             startActivity(goHome)
         }
 
+        // 지도 기능 사용을 위한 콜백 등록
+        mapView.getMapAsync(this)
+
 
     }
+
+    // 지도 기능 사용을 위한 콜백 등록
+    override fun onMapReady(map: NaverMap){
+        naverMap = map
+    }
+
 
     override fun onStart() {
         super.onStart()
