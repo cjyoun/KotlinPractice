@@ -71,4 +71,6 @@ dependencies {
     //----------------------------------------------------------
     implementation "com.naver.maps:map-sdk:3.15.0"      // 네이버 지도 dependency
 
+    implementation "com.google.android.gms:play-services-location:20.0.0" // 지도 현위치 구하기
+
 }
